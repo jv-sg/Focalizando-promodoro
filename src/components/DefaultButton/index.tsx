@@ -1,0 +1,16 @@
+import estilo from './DefaultButton.module.css'
+
+type DefaultButtonProps = {
+    icon: React.ReactNode;
+    color?: 'green' | 'red';
+} & React.ComponentProps<'button'>;
+
+export function DefaultButton({ icon, color = 'green', ...props }: DefaultButtonProps) {
+    return(
+        <>
+            <button className={`${estilo.button} ${estilo[color]}`} {...props}>
+                {icon}
+            </button>
+        </>
+    );
+}
